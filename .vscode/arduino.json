@@ -1,6 +1,5 @@
 {
-    "board": "arduino:avr:mega",
-    "configuration": "cpu=atmega2560",
-    "port": "COM4",
-    "sketch": "carrace\\carrace.ino"
+    "board": "arduino:avr:megaADK",
+    "port": "/dev/ttyACM0",
+    "sketch": "carrace/carrace.ino"
 }

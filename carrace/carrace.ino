@@ -69,7 +69,6 @@ void setup()   {
   // you can change the contrast around to adapt the display
   // for the best viewing!
   display.setContrast(50);
-
  
   display.clearDisplay();   // clears the screen and buffer
 
@@ -79,32 +78,35 @@ void setup()   {
 
 void loop() {
 
-  buttonStatus = digitalRead(buttonPin);
-  if (buttonStatus){
-    myServo.attach(servoPin);
-    myServo.write(20);
-    StartTime = millis();
-    buttonPushed = 1;
-  }
+  // buttonStatus = digitalRead(buttonPin);
+  // if (buttonStatus){
+  //   myServo.attach(servoPin);
+  //   myServo.write(20);
+  //   StartTime = millis();
+  //   buttonPushed = 1;
+  // }
 
-  getstopSensor();
-  if (stopSensor > 900 && buttonPushed){
-    CurrentTime = millis();
-    ElapsedTime = CurrentTime - StartTime;
-    if (ElapsedTime < topTime){
-      topTime = ElapsedTime;
-    }
-    delay(1000);
-    myServo.write(110);
-    delay(1000);
-    myServo.detach();
-    buttonPushed = 0;
-    velocity = distance / (ElapsedTime / 1000);
-    accel = velocity / (ElapsedTime / 1000);
-  }
+  // getstopSensor();
+  // if (stopSensor > 900 && buttonPushed){
+  //   CurrentTime = millis();
+  //   ElapsedTime = CurrentTime - StartTime;
+  //   if (ElapsedTime < topTime){
+  //     topTime = ElapsedTime;
+  //   }
+  //   delay(1000);
+  //   myServo.write(110);
+  //   delay(1000);
+  //   myServo.detach();
+  //   buttonPushed = 0;
+  //   velocity = distance / (ElapsedTime / 1000);
+  //   accel = velocity / (ElapsedTime / 1000);
+  // }
 
   // delay(200);
-  updateDisplay();
+  display.clearDisplay(); 
+  display.println("Hello, world!");
+  // updateDisplay();
+  display.display();
 
 }
 
